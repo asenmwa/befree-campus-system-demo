@@ -12,45 +12,58 @@ import MedicalHistory from './MedicalHistory';
 const MemberRegistration = () => {
   const [activeCard, setActiveCard] = useState(1);
 
-  const nextCard = () => setActiveCard(activeCard + 1);
-  const prevCard = () => setActiveCard(activeCard - 1);
+  const nextCard = () => {
+    setActiveCard(activeCard + 1);
+  };
+
+  const prevCard = () => {
+    setActiveCard(activeCard - 1);
+  };
+
+  const handleSubmit = () => {
+    // Handle form submission logic here
+    console.log('Form submitted');
+  };
 
   return (
-    <div className="container mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4">Member Registration</h2>
-      <div>
-        {/* Progress Stepper */}
-        <div className="flex mb-4">
-          {Array.from({ length: 9 }, (_, index) => (
-            <div 
-              key={index + 1}
-              className={`flex-1 py-2 px-4 rounded-md text-center ${
-                activeCard === index + 1 ? 'bg-maroon text-white' : 'bg-gray-200'
-              }`}
-            >
-              {index + 1}
-            </div>
-          ))}
-        </div>
+    <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <h3 className="text-xl font-bold mb-4">New Member Registration</h3>
+      {activeCard === 1 && <PersonalInformation />}
+      {activeCard === 2 && <ParentGuardianContact />}
+      {activeCard === 3 && <EmergencyContact />}
+      {activeCard === 4 && <HouseholdIncome />}
+      {activeCard === 5 && <FamilyInformation />}
+      {activeCard === 6 && <ActivitiesServices />}
+      {activeCard === 7 && <VolunteerismMentorship />}
+      {activeCard === 8 && <EducationalHistory />}
+      {activeCard === 9 && <MedicalHistory />}
 
-        {/* Form Cards */}
-        <div>
-          {activeCard === 1 && <PersonalInformation />}
-          {activeCard === 2 && <ParentGuardianContact />}
-          {activeCard === 3 && <EmergencyContact />}
-          {activeCard === 4 && <HouseholdIncome />}
-          {activeCard === 5 && <FamilyInformation />}
-          {activeCard === 6 && <ActivitiesServices />}
-          {activeCard === 7 && <VolunteerismMentorship />}
-          {activeCard === 8 && <EducationalHistory />}
-          {activeCard === 9 && <MedicalHistory />}
-        </div>
-
-        {/* Navigation Buttons */}
-        <div className="flex justify-between mt-4">
-          <button onClick={prevCard} disabled={activeCard === 1}>Previous</button>
-          <button onClick={nextCard} disabled={activeCard === 9}>Next</button>
-        </div>
+      <div className="flex justify-between mt-4">
+        <button
+          type="button"
+          onClick={prevCard}
+          disabled={activeCard === 1}
+          className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:opacity-50"
+        >
+          Previous
+        </button>
+        {activeCard < 9 ? (
+          <button
+            type="button"
+            onClick={nextCard}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Next
+          </button>
+        ) : (
+          <button
+            type="button"
+            onClick={handleSubmit}
+            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Submit
+          </button>
+        )}
       </div>
     </div>
   );
