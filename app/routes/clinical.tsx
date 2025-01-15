@@ -5,6 +5,7 @@ import RapeCaseForm from '~/components/forms/Clinical/RapeCaseForm';
 import HIVTestingCaseForm from '~/components/forms/Clinical/HIVTestingCaseForm';
 import GBVCaseForm from '~/components/forms/Clinical/GBVCaseForm';
 import VisitHistoryChart from '~/components/Clinical/VisitHistoryChart';
+import { useNavigate } from '@remix-run/react';
 
 const ClinicalRoute = () => {
   const [isRapeModalOpen, setIsRapeModalOpen] = useState(false);
@@ -12,7 +13,9 @@ const ClinicalRoute = () => {
   const [isGBVModalOpen, setIsGBVModalOpen] = useState(false);
   const [patientDetails, setPatientDetails] = useState<{ firstName: string; dateOfBirth: string; gender: string; rfid: string } | null>(null);
   const [isRfidModalOpen, setIsRfidModalOpen] = useState(false);
+  const [rfidError, setRfidError] = useState(false);
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const rfidFromUrl = searchParams.get('rfid');
 
   useEffect(() => {
@@ -27,6 +30,7 @@ const ClinicalRoute = () => {
       const memberData = JSON.parse(storedMemberData);
       if (memberData.rfid === rfidToUse) {
         setPatientDetails(memberData);
+        setIsRfidModalOpen(false); // Close modal if patient is found via URL
       } else {
         // Handle case where RFID from URL doesn't match local storage
         console.error('RFID mismatch');
@@ -40,9 +44,12 @@ const ClinicalRoute = () => {
       const memberData = JSON.parse(storedMemberData);
       if (memberData.rfid === rfid) {
         setPatientDetails(memberData);
+        setRfidError(false); // Reset error on successful submission
         setIsRfidModalOpen(false);
+        navigate('/clinical'); // Navigate to clinical route without rfid param
       } else {
-        // Handle incorrect RFID
+        setRfidError(true);
+        setIsRfidModalOpen(true); // Keep modal open to show error
         console.error('Incorrect RFID');
       }
     }
@@ -52,6 +59,13 @@ const ClinicalRoute = () => {
     <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <RfidInputModal isOpen={isRfidModalOpen} onClose={() => setIsRfidModalOpen(false)} onRfidSubmit={handleRfidSubmit} />
       <h1 className="text-xl font-bold mb-4">Clinical Forms</h1>
+      {rfidError && (
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+          <strong className="font-bold">Error!</strong>
+          <span className="block sm:inline"> Patient RFID not found.</span>
+        </div>
+      )}
+navigationLinks
 
       {/* Patient Details */}
       {patientDetails && (
