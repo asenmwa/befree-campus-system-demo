@@ -66,7 +66,7 @@ const ClinicalRoute = () => {
 
       <div className="mb-4">
         <h2 className="text-lg font-semibold mb-2">Visit History</h2>
-        {patientDetails && <VisitHistoryChart rfid={patientDetails?.rfid} patientData={patientDetails} />}
+        <VisitHistoryChart rfid={patientDetails?.rfid || null} patientData={{ name: patientDetails?.firstName ?? '', dob: patientDetails?.dateOfBirth ?? '', gender: patientDetails?.gender ?? '' }} />
       </div>
 
       <div className="flex space-x-4 mb-4">
@@ -79,21 +79,22 @@ const ClinicalRoute = () => {
 
       {isRapeModalOpen && (
         <div className="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-          <RapeCaseForm rfid={patientDetails?.rfid} patientData={patientDetails} />
+          <RapeCaseForm rfid={patientDetails?.rfid || null} patientData={{ name: patientDetails?.firstName ?? '', dob: patientDetails?.dateOfBirth ?? '', gender: patientDetails?.gender ?? '' }} />
         </div>
       )}
 
       {isHIVModalOpen && (
         <div className="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-          <HIVTestingCaseForm rfid={patientDetails?.rfid} patientData={patientDetails} />
+          <HIVTestingCaseForm rfid={patientDetails?.rfid || null} patientData={{ name: patientDetails?.firstName ?? '', dob: patientDetails?.dateOfBirth ?? '', gender: patientDetails?.gender ?? '' }} />
         </div>
       )}
 
       {isGBVModalOpen && (
         <div className="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-          <GBVCaseForm rfid={patientDetails?.rfid} patientData={patientDetails} />
+          <GBVCaseForm rfid={patientDetails?.rfid || null} patientData={{ name: patientDetails?.firstName ?? '', dob: patientDetails?.dateOfBirth ?? '', gender: patientDetails?.gender ?? '' }} />
         </div>
       )}
+navigationLinks
     </div>
   );
 };

@@ -12,7 +12,7 @@ const RfidInputModal = ({ isOpen, onClose, onRfidSubmit }: { isOpen: boolean; on
 
   const handleProceed = () => {
     if (rfid) {
-      navigate(`/clinical?rfid=${rfid}`);
+      onRfidSubmit(rfid);
     }
   };
 
