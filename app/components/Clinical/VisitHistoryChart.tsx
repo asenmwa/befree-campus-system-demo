@@ -2,7 +2,7 @@ import React from 'react';
 
 interface VisitHistoryChartProps {
   rfid: string | null;
-  patientData: { name?: string; dob?: string; gender?: string } | null;
+  patientData: { name: string; dob: string; gender: string } | null;
 }
 
 const VisitHistoryChart: React.FC<VisitHistoryChartProps> = ({ rfid, patientData }) => {

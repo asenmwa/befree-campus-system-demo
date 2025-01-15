@@ -19,8 +19,8 @@ const RfidInputModal = ({ isOpen, onClose, onRfidSubmit }: { isOpen: boolean; on
   return (
     <>
       {isOpen && (
-        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full" id="rfid-modal">
-          <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto flex items-center justify-center" id="rfid-modal">
+          <div className="relative mx-auto p-5 border w-7/10 shadow-lg rounded-md bg-white">
             <div className="mt-3 text-center">
               <h3 className="text-lg leading-6 font-medium text-gray-900">
                 Enter Patient RFID
@@ -43,7 +43,7 @@ const RfidInputModal = ({ isOpen, onClose, onRfidSubmit }: { isOpen: boolean; on
             </button>
             <button
               onClick={handleCancel}
-              className="px-4 py-2 bg-red-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300"
+              className="px-4 py-2 bg-dark-500 text-base font-medium rounded-md w-full shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300"
             >
               Cancel
             </button>
