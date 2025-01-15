@@ -93,11 +93,15 @@ const ClinicalRoute = () => {
         </div>
 
         <div className="flex space-x-4 mb-4">
-          <button onClick={() => setIsRapeModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Rape Case</button>
+          <button className="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded cursor-not-allowed">General Intake Form</button>
+          <button onClick={() => setIsRapeModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Suspected Rape</button>
           <button onClick={() => setIsHIVModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">HIV Testing</button>
+          <button className="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded cursor-not-allowed">PrEP</button>
+          <button className="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded cursor-not-allowed">PEP</button>
           <button onClick={() => setIsGBVModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">GBV Case</button>
-          <button className="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded cursor-not-allowed" disabled>Other Encounter 1</button>
-          <button className="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded cursor-not-allowed" disabled>Other Encounter 2</button>
+          <button className="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded cursor-not-allowed">Reproductive Health</button>
+          <button className="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded cursor-not-allowed">Drug Misuse</button>
+          <button className="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded cursor-not-allowed">Psychology Intake Form</button>
         </div>
 
         {isRapeModalOpen && (
