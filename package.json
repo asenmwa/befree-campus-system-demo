@@ -19,6 +19,8 @@
     "@remix-run/react": "^2.15.2",
     "@remix-run/serve": "^2.15.2",
     "@themesberg/react-bootstrap": "^1.4.1",
+    "@types/better-sqlite3": "^7.6.12",
+    "better-sqlite3": "^11.8.0",
     "bootstrap": "^5.3.3",
     "clsx": "^2.1.1",
     "isbot": "^4.1.0",

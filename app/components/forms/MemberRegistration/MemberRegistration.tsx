@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Form } from '@remix-run/react';
 import PersonalInformation from './PersonalInformation';
 import ParentGuardianContact from './ParentGuardianContact';
 import EmergencyContact from './EmergencyContact';
@@ -20,13 +21,8 @@ const MemberRegistration = () => {
     setActiveCard(activeCard - 1);
   };
 
-  const handleSubmit = () => {
-    // Handle form submission logic here
-    console.log('Form submitted');
-  };
-
   return (
-    <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <Form method="post" className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
       <h3 className="text-xl font-bold mb-4">New Member Registration</h3>
       {activeCard === 1 && <PersonalInformation />}
       {activeCard === 2 && <ParentGuardianContact />}
@@ -57,15 +53,14 @@ const MemberRegistration = () => {
           </button>
         ) : (
           <button
-            type="button"
-            onClick={handleSubmit}
+            type="submit"
             className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
             Submit
           </button>
         )}
       </div>
-    </div>
+    </Form>
   );
 };
 
