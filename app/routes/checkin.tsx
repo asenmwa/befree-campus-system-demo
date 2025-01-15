@@ -6,15 +6,14 @@ const CheckInPage = () => {
   const [message, setMessage] = useState({ text: '', type: null });
   const [notification, setNotification] = useState({ text: '', type: null });
   const inputRef = useRef(null);
+  const [inputTimeout, setInputTimeout] = useState(null);
 
   const showNotification = (text, type) => {
     setNotification({ text, type });
     setTimeout(() => setNotification({ text: '', type: null }), 3000);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
+  const handleSubmit = () => {
     // Get member data from localStorage
     const memberDataStr = localStorage.getItem('memberData');
     if (!memberDataStr) {
@@ -28,11 +27,6 @@ const CheckInPage = () => {
       
       // Check if the input matches the member's RFID
       if (memberData.rfid === input) {
-        setMessage({ 
-          text: `Welcome, ${memberData.firstName} ${memberData.lastName}!`, 
-          type: 'welcome' 
-        });
-        
         // Log the check-in
         const checkInOutLog = JSON.parse(localStorage.getItem('checkInOutLog') || '[]');
         const lastLog = checkInOutLog[checkInOutLog.length - 1];
@@ -51,6 +45,10 @@ const CheckInPage = () => {
             rfid: memberData.rfid,
             memberName: `${memberData.firstName} ${memberData.lastName}`,
             checkInTime: new Date().toISOString()
+          });
+          setMessage({ 
+            text: `Welcome, ${memberData.firstName} ${memberData.lastName}!`, 
+            type: 'welcome' 
           });
         }
         
@@ -78,11 +76,42 @@ const CheckInPage = () => {
     }
   };
 
-  // Keep focus on input
+  // Handle input changes with debounce
+  useEffect(() => {
+    if (input) {
+      // Clear existing timeout
+      if (inputTimeout) {
+        clearTimeout(inputTimeout);
+      }
+
+      // Set new timeout for submission
+      const newTimeout = setTimeout(() => {
+        handleSubmit();
+      }, 500); // 500ms delay after typing stops
+
+      setInputTimeout(newTimeout);
+    }
+
+    return () => {
+      if (inputTimeout) {
+        clearTimeout(inputTimeout);
+      }
+    };
+  }, [input]);
+
+  // Keep focus on input and handle key events
   useEffect(() => {
     if (inputRef.current) {
       inputRef.current.focus();
     }
+
+    const interval = setInterval(() => {
+      if (inputRef.current && document.activeElement !== inputRef.current) {
+        inputRef.current.focus();
+      }
+    }, 100);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -107,7 +136,7 @@ const CheckInPage = () => {
           
           <h2 className="text-2xl font-bold mb-4">Check In / Out</h2>
           <p className="text-gray-600 mb-6">
-            Please enter your ID or name
+            Please scan your RFID card
           </p>
 
           {message.text && (
@@ -120,23 +149,14 @@ const CheckInPage = () => {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <input
-              ref={inputRef}
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Enter RFID"
-              className="w-full p-2 border border-gray-300 rounded-lg text-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              autoComplete="off"
-            />
-            <button 
-              type="submit" 
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
-            >
-              Submit
-            </button>
-          </form>
+          <input
+            ref={inputRef}
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            className="opacity-0 absolute w-0 h-0 p-0 m-0 border-0"
+            autoComplete="off"
+          />
         </div>
       </div>
     </div>
