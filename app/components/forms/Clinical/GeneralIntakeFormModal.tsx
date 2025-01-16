@@ -27,15 +27,7 @@ const GeneralIntakeFormModal: React.FC<GeneralIntakeFormModalProps> = ({ isOpen,
               X
             </button>
           </div>
-          {patientData && (
-            <div className="mb-4 p-4 border rounded">
-              <h3 className="text-md font-semibold mb-2">Patient Details</h3>
-              <p>RFID: {rfid}</p>
-              <p>Name: {patientData.name}</p>
-              <p>Date of Birth: {patientData.dob}</p>
-              <p>Gender: {patientData.gender}</p>
-            </div>
-          )}
+     
           <div className="mb-4">
             <label htmlFor="chiefComplaint" className="block text-gray-700 text-sm font-bold mb-2">
               Chief Complaint

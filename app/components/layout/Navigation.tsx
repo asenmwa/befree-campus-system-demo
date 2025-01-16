@@ -9,9 +9,9 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="bg-[--color-gold] p-4 text-[--color-black]">
+    <nav className="bg-[--color-red] p-4 text-[--color-white]">
       <div className="container mx-auto flex items-center justify-between">
-        <Link to="/" className="text-xl font-bold">#BeFree</Link>
+        <Link to="/" className="text-xl font-bold">Main Menu</Link>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="focus:outline-none">
             <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
@@ -31,11 +31,9 @@ const Navigation: React.FC = () => {
           </button>
         </div>
         <ul className={`md:flex space-x-4 ${isMenuOpen ? 'block' : 'hidden'}`}>
-          <li><Link to="/" className="hover:underline">Dashboard</Link></li>
-          <li><Link to="/register" className="hover:underline">Register</Link></li>
-          <li><Link to="/checkin" className="hover:underline">Check-In/Out</Link></li>
-          <li><Link to="/clinical" className="hover:underline">Clinical Form</Link></li>
-          <li><Link to="/wellness" className="hover:underline">Wellness Form</Link></li>
+          <li><Link to="/dashboard" className="hover:underline">Sample Dashboard</Link></li>
+          <li><Link to="/report" className="hover:underline">Sample Report</Link></li>
+
         </ul>
       </div>
     </nav>

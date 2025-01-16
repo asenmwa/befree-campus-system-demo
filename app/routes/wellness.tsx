@@ -114,7 +114,8 @@ const WellnessRoute = () => {
           <button onClick={() => setIsPsychologyIntakeModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Psychology Intake Form</button>
           <button onClick={() => setIsCounsellingModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Counselling</button>
           <button onClick={() => setIsBehaviouralAnalysisModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Behavioural Analysis</button>
-        </div>
+          <button onClick={() => setIsDrugMisuseModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Drug Misuse</button>
+          </div>
 
         {isRapeModalOpen && (
           <RapeCaseForm isOpen={isRapeModalOpen} onClose={() => setIsRapeModalOpen(false)} rfid={patientDetails?.rfid || null} patientData={{ name: patientDetails?.firstName ?? '', dob: patientDetails?.dateOfBirth ?? '', gender: patientDetails?.gender ?? '' }} />

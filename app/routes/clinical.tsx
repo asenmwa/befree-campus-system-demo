@@ -116,10 +116,7 @@ const ClinicalRoute = () => {
           <button onClick={() => setIsGBVModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">GBV Case</button>
           <button onClick={() => setIsReproductiveHealthModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Reproductive Health</button>
           <button onClick={() => setIsDrugMisuseModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Drug Misuse</button>
-          <button onClick={() => setIsPsychologyIntakeModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Psychology Intake</button>
-          <button onClick={() => setIsCounsellingModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Counselling (Sample)</button>
-          <button onClick={() => setIsBehaviouralAnalysisModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Behavioural Analysis (Sample)</button>
-        </div>
+          </div>
 
         {isRapeModalOpen && (
           <RapeCaseForm isOpen={isRapeModalOpen} onClose={() => setIsRapeModalOpen(false)}  rfid={patientDetails?.rfid || null} patientData={{ name: patientDetails?.firstName ?? '', dob: patientDetails?.dateOfBirth ?? '', gender: patientDetails?.gender ?? '' }} />

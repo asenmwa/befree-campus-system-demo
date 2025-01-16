@@ -27,15 +27,7 @@ const ReproductiveHealthModal: React.FC<ReproductiveHealthModalProps> = ({ isOpe
               X
             </button>
           </div>
-          {patientData && (
-            <div className="mb-4 p-4 border rounded">
-              <h3 className="text-md font-semibold mb-2">Patient Details</h3>
-              <p>RFID: {rfid}</p>
-              <p>Name: {patientData.name}</p>
-              <p>Date of Birth: {patientData.dob}</p>
-              <p>Gender: {patientData.gender}</p>
-            </div>
-          )}
+       
           <div className="mb-4">
             <label htmlFor="pregnancyStatus" className="block text-gray-700 text-sm font-bold mb-2">
               Pregnancy Status
@@ -54,7 +46,7 @@ const ReproductiveHealthModal: React.FC<ReproductiveHealthModalProps> = ({ isOpe
           </div>
           <div className="mb-4">
             <label htmlFor="contraceptiveMethod" className="block text-gray-700 text-sm font-bold mb-2">
-              গর্ভনিরোধের পদ্ধতি (Contraceptive Method)
+              Contraceptive Method
             </label>
             <input type="text" id="contraceptiveMethod" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </div>
