@@ -121,22 +121,22 @@ const FamilyInformation = () => {
         <h4 className="mb-4">Family Information</h4>
         <Row>
           <Col md={6} className="mb-3">
-            <Form.Group id="primaryLanguage">
-              <Form.Label>What is the primary language spoken at home?</Form.Label>
-              <Form.Control type="text" placeholder="Primary Language" name="primaryLanguage" value={primaryLanguage} onChange={handleInputChange} />
+            <Form.Group id="primaryLanguage" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">What is the primary language spoken at home?</Form.Label>
+              <Form.Control type="text" placeholder="Primary Language" name="primaryLanguage" value={primaryLanguage} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
           <Col md={6} className="mb-3">
-            <Form.Group id="householdSize">
-              <Form.Label>How many people are currently living in your household, including yourself?</Form.Label>
-              <Form.Control type="number" placeholder="Number of People" name="householdSize" value={householdSize} onChange={handleInputChange} />
+            <Form.Group id="householdSize" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">How many people are currently living in your household, including yourself?</Form.Label>
+              <Form.Control type="number" placeholder="Number of People" name="householdSize" value={householdSize} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="familyStructure">
-              <Form.Label>Which one of the below family structures best applies to your family?</Form.Label>
+            <Form.Group id="familyStructure" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Which one of the below family structures best applies to your family?</Form.Label>
               <div>
                 <Form.Check type="checkbox" label="Nuclear Family (Two parents and children)" id="familyStructure-nuclear" checked={familyStructure.nuclear} onChange={handleFamilyStructureChange} />
                 <Form.Check type="checkbox" label="Blended/Step Family (An adult(s) raising a child(ren) from a previous relationship(s))" id="familyStructure-blended" checked={familyStructure.blended} onChange={handleFamilyStructureChange} />
@@ -153,36 +153,36 @@ const FamilyInformation = () => {
         </Row>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="otherFamilyStructure">
-              <Form.Label>Please specify any other family structure that is not listed above</Form.Label>
-              <Form.Control type="text" placeholder="Other Family Structure" name="otherFamilyStructure" value={otherFamilyStructure} onChange={handleInputChange} />
+            <Form.Group id="otherFamilyStructure" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Please specify any other family structure that is not listed above</Form.Label>
+              <Form.Control type="text" placeholder="Other Family Structure" name="otherFamilyStructure" value={otherFamilyStructure} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col md={6} className="mb-3">
-            <Form.Group id="dependants">
-              <Form.Label>How many children/dependants do you have?</Form.Label>
-              <Form.Control type="number" placeholder="Number of Dependants" name="dependants" value={dependants} onChange={handleInputChange} />
+            <Form.Group id="dependants" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">How many children/dependants do you have?</Form.Label>
+              <Form.Control type="number" placeholder="Number of Dependants" name="dependants" value={dependants} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
           <Col md={6} className="mb-3">
-            <Form.Group id="mealsPerDay">
-              <Form.Label>On average, how many meals a day are prepared in your household?</Form.Label>
-              <Form.Control type="number" placeholder="Meals per Day" name="mealsPerDay" value={mealsPerDay} onChange={handleInputChange} />
+            <Form.Group id="mealsPerDay" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">On average, how many meals a day are prepared in your household?</Form.Label>
+              <Form.Control type="number" placeholder="Meals per Day" name="mealsPerDay" value={mealsPerDay} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col md={6} className="mb-3">
-            <Form.Group id="religion">
-              <Form.Label>What is your religion?</Form.Label>
-              <Form.Control type="text" placeholder="Religion" name="religion" value={religion} onChange={handleInputChange} />
+            <Form.Group id="religion" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">What is your religion?</Form.Label>
+              <Form.Control type="text" placeholder="Religion" name="religion" value={religion} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
           <Col md={6} className="mb-3">
-            <Form.Group id="convictedOfCrime">
-              <Form.Label>Have you ever been convicted of a crime?</Form.Label>
+            <Form.Group id="convictedOfCrime" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Have you ever been convicted of a crime?</Form.Label>
               <div>
                 <Form.Check type="radio" label="Yes" name="convictedOfCrime" id="convictedOfCrime-yes" value="yes" checked={convictedOfCrime === 'yes'} onChange={() => handleRadioChange('convictedOfCrime', 'yes')} inline />
                 <Form.Check type="radio" label="No" name="convictedOfCrime" id="convictedOfCrime-no" value="no" checked={convictedOfCrime === 'no'} onChange={() => handleRadioChange('convictedOfCrime', 'no')} inline />
@@ -192,8 +192,8 @@ const FamilyInformation = () => {
         </Row>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="ongoingCriminalCase">
-              <Form.Label>Do you have an ongoing criminal case, or have you been convicted of a criminal offence?</Form.Label>
+            <Form.Group id="ongoingCriminalCase" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Do you have an ongoing criminal case, or have you been convicted of a criminal offence?</Form.Label>
               <div>
                 <Form.Check type="radio" label="Yes" name="ongoingCriminalCase" id="ongoingCriminalCase-yes" value="yes" checked={ongoingCriminalCase === 'yes'} onChange={() => handleRadioChange('ongoingCriminalCase', 'yes')} inline />
                 <Form.Check type="radio" label="No" name="ongoingCriminalCase" id="ongoingCriminalCase-no" value="no" checked={ongoingCriminalCase === 'no'} onChange={() => handleRadioChange('ongoingCriminalCase', 'no')} inline />

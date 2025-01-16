@@ -88,8 +88,8 @@ const ActivitiesServices = () => {
         <h4 className="mb-4">#BeFree Activities & Services</h4>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="activitiesOfInterest">
-              <Form.Label>Which activities/services would you be interested in at the #BeFree Youth Campus?</Form.Label>
+            <Form.Group id="activitiesOfInterest" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Which activities/services would you be interested in at the #BeFree Youth Campus?</Form.Label>
               <div>
                 <Form.Check type="checkbox" label="#BeFree Cares Clinic (Sexual Health & Awareness Programme - SHAP)" id="activities-caresClinic" checked={activitiesOfInterest.caresClinic} onChange={handleActivityChange} />
                 <Form.Check type="checkbox" label="#BreakFree Anti-Violence Centre (Mental Health and Counselling)" id="activities-antiViolence" checked={activitiesOfInterest.antiViolence} onChange={handleActivityChange} />
@@ -112,9 +112,9 @@ const ActivitiesServices = () => {
         </Row>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="otherActivities">
-              <Form.Label>Other than the list mentioned above, what other activities would you like to volunteer for?</Form.Label>
-              <Form.Control type="text" placeholder="Other Activities" name="otherActivities" value={otherActivities} onChange={handleInputChange} />
+            <Form.Group id="otherActivities" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Other than the list mentioned above, what other activities would you like to volunteer for?</Form.Label>
+              <Form.Control type="text" placeholder="Other Activities" name="otherActivities" value={otherActivities} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>

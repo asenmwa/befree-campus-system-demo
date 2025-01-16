@@ -6,7 +6,8 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-  --color-maroon: #8B0000;
+  --color-maroon: red;
+ 
   --color-gold: #CD7F32;
   --color-black: #000000;
 }

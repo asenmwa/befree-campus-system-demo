@@ -118,8 +118,8 @@ const EducationalHistory = () => {
         <h4 className="mb-4">Educational History</h4>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="enrolledInInstitution">
-              <Form.Label>Are you currently enrolled in an educational institution?</Form.Label>
+            <Form.Group id="enrolledInInstitution" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Are you currently enrolled in an educational institution?</Form.Label>
               <div>
                 <Form.Check type="radio" label="Yes" name="enrolledInInstitution" id="enrolledInInstitution-yes" value="yes" checked={enrolledInInstitution === 'yes'} onChange={() => handleRadioChange('enrolledInInstitution', 'yes')} inline />
                 <Form.Check type="radio" label="No" name="enrolledInInstitution" id="enrolledInInstitution-no" value="no" checked={enrolledInInstitution === 'no'} onChange={() => handleRadioChange('enrolledInInstitution', 'no')} inline />
@@ -129,36 +129,36 @@ const EducationalHistory = () => {
         </Row>
         <Row>
           <Col md={6} className="mb-3">
-            <Form.Group id="educationalInstitutionName">
-              <Form.Label>Name of your Educational Institution:</Form.Label>
-              <Form.Control type="text" placeholder="Educational Institution Name" name="educationalInstitutionName" value={educationalInstitutionName} onChange={handleInputChange} />
+            <Form.Group id="educationalInstitutionName" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Name of your Educational Institution:</Form.Label>
+              <Form.Control type="text" placeholder="Educational Institution Name" name="educationalInstitutionName" value={educationalInstitutionName} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
           <Col md={6} className="mb-3">
-            <Form.Group id="currentGrade">
-              <Form.Label>Current Grade:</Form.Label>
-              <Form.Control type="text" placeholder="Current Grade" name="currentGrade" value={currentGrade} onChange={handleInputChange} />
+            <Form.Group id="currentGrade" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Current Grade:</Form.Label>
+              <Form.Control type="text" placeholder="Current Grade" name="currentGrade" value={currentGrade} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col md={6} className="mb-3">
-            <Form.Group id="currentlyStudying">
-              <Form.Label>What are you currently studying for:</Form.Label>
-              <Form.Control type="text" placeholder="Currently Studying" name="currentlyStudying" value={currentlyStudying} onChange={handleInputChange} />
+            <Form.Group id="currentlyStudying" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">What are you currently studying for:</Form.Label>
+              <Form.Control type="text" placeholder="Currently Studying" name="currentlyStudying" value={currentlyStudying} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
           <Col md={6} className="mb-3">
-            <Form.Group id="highestEducationLevel">
-              <Form.Label>What is the highest level of education you have completed?</Form.Label>
-              <Form.Control type="text" placeholder="Highest Education Level" name="highestEducationLevel" value={highestEducationLevel} onChange={handleInputChange} />
+            <Form.Group id="highestEducationLevel" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">What is the highest level of education you have completed?</Form.Label>
+              <Form.Control type="text" placeholder="Highest Education Level" name="highestEducationLevel" value={highestEducationLevel} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="suspendedExpelled">
-              <Form.Label>Have you ever been suspended/expelled from school?</Form.Label>
+            <Form.Group id="suspendedExpelled" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Have you ever been suspended/expelled from school?</Form.Label>
               <div>
                 <Form.Check type="radio" label="Yes" name="suspendedExpelled" id="suspendedExpelled-yes" value="yes" checked={suspendedExpelled === 'yes'} onChange={() => handleRadioChange('suspendedExpelled', 'yes')} inline />
                 <Form.Check type="radio" label="No" name="suspendedExpelled" id="suspendedExpelled-no" value="no" checked={suspendedExpelled === 'no'} onChange={() => handleRadioChange('suspendedExpelled', 'no')} inline />
@@ -168,22 +168,22 @@ const EducationalHistory = () => {
         </Row>
         <Row>
            <Col md={6} className="mb-3">
-            <Form.Group id="schoolName">
-              <Form.Label>Name of School</Form.Label>
-              <Form.Control type="text" placeholder="School Name" name="schoolName" value={schoolName} onChange={handleInputChange} />
+            <Form.Group id="schoolName" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Name of School</Form.Label>
+              <Form.Control type="text" placeholder="School Name" name="schoolName" value={schoolName} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
           <Col md={6} className="mb-3">
-            <Form.Group id="suspensionReason">
-              <Form.Label>Reason for Suspension/Expulsion:</Form.Label>
-              <Form.Control type="text" placeholder="Reason for Suspension/Expulsion" name="suspensionReason" value={suspensionReason} onChange={handleInputChange} />
+            <Form.Group id="suspensionReason" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Reason for Suspension/Expulsion:</Form.Label>
+              <Form.Control type="text" placeholder="Reason for Suspension/Expulsion" name="suspensionReason" value={suspensionReason} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="educationCostPayer">
-              <Form.Label>Who pays the cost of your education?</Form.Label>
+            <Form.Group id="educationCostPayer" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Who pays the cost of your education?</Form.Label>
               <div>
                 <Form.Check type="checkbox" label="Parent(s)/Guardian(s)" id="educationCostPayer-parents" checked={educationCostPayer.parents} onChange={handleEducationCostPayerChange} />
                 <Form.Check type="checkbox" label="Bursary/Scholarship" id="educationCostPayer-bursary" checked={educationCostPayer.bursary} onChange={handleEducationCostPayerChange} />
@@ -195,17 +195,17 @@ const EducationalHistory = () => {
         </Row>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="extracurricularActivities">
-              <Form.Label>Do you participate in any extracurricular activities outside of your school? If yes, please indicate</Form.Label>
-              <Form.Control type="text" placeholder="Extracurricular Activities" name="extracurricularActivities" value={extracurricularActivities} onChange={handleInputChange} />
+            <Form.Group id="extracurricularActivities" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Do you participate in any extracurricular activities outside of your school? If yes, please indicate</Form.Label>
+              <Form.Control type="text" placeholder="Extracurricular Activities" name="extracurricularActivities" value={extracurricularActivities} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="talentsSkills">
-              <Form.Label>Do you have any talents or special skills?</Form.Label>
-              <Form.Control type="text" placeholder="Talents or Special Skills" name="talentsSkills" value={talentsSkills} onChange={handleInputChange} />
+            <Form.Group id="talentsSkills" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Do you have any talents or special skills?</Form.Label>
+              <Form.Control type="text" placeholder="Talents or Special Skills" name="talentsSkills" value={talentsSkills} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>

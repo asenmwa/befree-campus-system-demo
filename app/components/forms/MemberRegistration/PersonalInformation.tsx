@@ -100,34 +100,34 @@ const PersonalInformation = () => {
       <legend>Personal Member Information</legend>
       <Row>
         <Col md={4} className="mb-3">
-          <Form.Group id="firstName">
-            <Form.Label>First Name</Form.Label>
-            <Form.Control type="text" placeholder="First Name" name="firstName" value={firstName} onChange={handleInputChange} />
+          <Form.Group id="firstName" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">First Name</Form.Label>
+            <Form.Control type="text" placeholder="First Name" name="firstName" value={firstName} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
         <Col md={4} className="mb-3">
-          <Form.Group id="lastName">
-            <Form.Label>Last Name</Form.Label>
-            <Form.Control type="text" placeholder="Last Name" name="lastName" value={lastName} onChange={handleInputChange} />
+          <Form.Group id="lastName" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Last Name</Form.Label>
+            <Form.Control type="text" placeholder="Last Name" name="lastName" value={lastName} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
          <Col md={4} className="mb-3">
-          <Form.Group id="rfid">
-            <Form.Label>RFID</Form.Label>
-            <Form.Control type="text" placeholder="RFID" name="rfid" value={rfid} onChange={handleInputChange} />
+          <Form.Group id="rfid" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">RFID</Form.Label>
+            <Form.Control type="text" placeholder="RFID" name="rfid" value={rfid} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
       </Row>
       <Row>
         <Col md={4} className="mb-3">
-          <Form.Group id="dateOfBirth">
-            <Form.Label>Date of Birth</Form.Label>
-            <Form.Control type="date" name="dateOfBirth" value={dateOfBirth} onChange={handleInputChange} />
+          <Form.Group id="dateOfBirth" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Date of Birth</Form.Label>
+            <Form.Control type="date" name="dateOfBirth" value={dateOfBirth} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
          <Col md={4} className="mb-3">
-          <Form.Group id="gender">
-            <Form.Label>Gender</Form.Label>
+          <Form.Group id="gender" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Gender</Form.Label>
             <div>
               <Form.Check type="radio" label="Male" name="gender" id="gender-male" value="male" checked={gender === 'male'} onChange={() => handleGenderChange('male')} inline />
               <Form.Check type="radio" label="Female" name="gender" id="gender-female" value="female" checked={gender === 'female'} onChange={() => handleGenderChange('female')} inline />
@@ -135,43 +135,43 @@ const PersonalInformation = () => {
           </Form.Group>
         </Col>
         <Col md={4} className="mb-3">
-          <Form.Group id="email">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Email Address" name="email" value={email} onChange={handleInputChange} />
+          <Form.Group id="email" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Email</Form.Label>
+            <Form.Control type="email" placeholder="Email Address" name="email" value={email} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
       </Row>
       <Row>
         <Col md={4} className="mb-3">
-          <Form.Group id="phone">
-            <Form.Label>Phone</Form.Label>
-            <Form.Control type="text" placeholder="Phone Number" name="phone" value={phone} onChange={handleInputChange} />
+          <Form.Group id="phone" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Phone</Form.Label>
+            <Form.Control type="text" placeholder="Phone Number" name="phone" value={phone} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
         <Col md={4} className="mb-3">
-          <Form.Group id="address">
-            <Form.Label>Address</Form.Label>
-            <Form.Control type="text" placeholder="Residential Address" name="address" value={address} onChange={handleInputChange} />
+          <Form.Group id="address" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Address</Form.Label>
+            <Form.Control type="text" placeholder="Residential Address" name="address" value={address} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
         <Col md={4} className="mb-3">
-          <Form.Group id="city">
-            <Form.Label>City</Form.Label>
-            <Form.Control type="text" placeholder="Town/City of Residence" name="city" value={city} onChange={handleInputChange} />
+          <Form.Group id="city" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">City</Form.Label>
+            <Form.Control type="text" placeholder="Town/City of Residence" name="city" value={city} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
       </Row>
       <Row>
         <Col md={4} className="mb-3">
-          <Form.Group id="state">
-            <Form.Label>State</Form.Label>
-            <Form.Control type="text" placeholder="State" name="state" value={state} onChange={handleInputChange} />
+          <Form.Group id="state" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">State</Form.Label>
+            <Form.Control type="text" placeholder="State" name="state" value={state} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
         <Col md={4} className="mb-3">
-          <Form.Group id="zipCode">
-            <Form.Label>Zip Code</Form.Label>
-            <Form.Control type="text" placeholder="Zip Code" name="zipCode" value={zipCode} onChange={handleInputChange} />
+          <Form.Group id="zipCode" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Zip Code</Form.Label>
+            <Form.Control type="text" placeholder="Zip Code" name="zipCode" value={zipCode} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
       </Row>

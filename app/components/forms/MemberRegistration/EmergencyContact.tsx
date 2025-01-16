@@ -70,51 +70,51 @@ const EmergencyContact = () => {
       <legend>Emergency Contact Information</legend>
       <Row>
         <Col md={6} className="mb-3">
-          <Form.Group id="emergencyContactTitle">
-            <Form.Label>Title</Form.Label>
-            <Form.Control type="text" placeholder="Title" name="emergencyContactTitle" value={emergencyContactTitle} onChange={handleInputChange} />
+          <Form.Group id="emergencyContactTitle" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Title</Form.Label>
+            <Form.Control type="text" placeholder="Title" name="emergencyContactTitle" value={emergencyContactTitle} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
         <Col md={6} className="mb-3">
-          <Form.Group id="emergencyContactLastName">
-            <Form.Label>Surname</Form.Label>
-            <Form.Control type="text" placeholder="Surname" name="emergencyContactLastName" value={emergencyContactLastName} onChange={handleInputChange} />
-          </Form.Group>
-        </Col>
-      </Row>
-      <Row>
-        <Col md={6} className="mb-3">
-          <Form.Group id="emergencyContactFirstName">
-            <Form.Label>Names</Form.Label>
-            <Form.Control type="text" placeholder="Names" name="emergencyContactFirstName" value={emergencyContactFirstName} onChange={handleInputChange} />
-          </Form.Group>
-        </Col>
-        <Col md={6} className="mb-3">
-          <Form.Group id="emergencyContactRelationship">
-            <Form.Label>Relationship to Member</Form.Label>
-            <Form.Control type="text" placeholder="Relationship" name="emergencyContactRelationship" value={emergencyContactRelationship} onChange={handleInputChange} />
+          <Form.Group id="emergencyContactLastName" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Surname</Form.Label>
+            <Form.Control type="text" placeholder="Surname" name="emergencyContactLastName" value={emergencyContactLastName} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
       </Row>
       <Row>
         <Col md={6} className="mb-3">
-          <Form.Group id="emergencyContactPhone">
-            <Form.Label>Contact Number</Form.Label>
-            <Form.Control type="text" placeholder="Contact Number" name="emergencyContactPhone" value={emergencyContactPhone} onChange={handleInputChange} />
+          <Form.Group id="emergencyContactFirstName" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Names</Form.Label>
+            <Form.Control type="text" placeholder="Names" name="emergencyContactFirstName" value={emergencyContactFirstName} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
         <Col md={6} className="mb-3">
-          <Form.Group id="emergencyContactAlternativePhone">
-            <Form.Label>Alternative Contact Number</Form.Label>
-            <Form.Control type="text" placeholder="Alternative Contact Number" name="emergencyContactAlternativePhone" value={emergencyContactAlternativePhone} onChange={handleInputChange} />
+          <Form.Group id="emergencyContactRelationship" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Relationship to Member</Form.Label>
+            <Form.Control type="text" placeholder="Relationship" name="emergencyContactRelationship" value={emergencyContactRelationship} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
       </Row>
       <Row>
         <Col md={6} className="mb-3">
-          <Form.Group id="emergencyContactAddress">
-            <Form.Label>Residential Address</Form.Label>
-            <Form.Control type="text" placeholder="Residential Address" name="emergencyContactAddress" value={emergencyContactAddress} onChange={handleInputChange} />
+          <Form.Group id="emergencyContactPhone" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Contact Number</Form.Label>
+            <Form.Control type="text" placeholder="Contact Number" name="emergencyContactPhone" value={emergencyContactPhone} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+          </Form.Group>
+        </Col>
+        <Col md={6} className="mb-3">
+          <Form.Group id="emergencyContactAlternativePhone" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Alternative Contact Number</Form.Label>
+            <Form.Control type="text" placeholder="Alternative Contact Number" name="emergencyContactAlternativePhone" value={emergencyContactAlternativePhone} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+          </Form.Group>
+        </Col>
+      </Row>
+      <Row>
+        <Col md={6} className="mb-3">
+          <Form.Group id="emergencyContactAddress" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Residential Address</Form.Label>
+            <Form.Control type="text" placeholder="Residential Address" name="emergencyContactAddress" value={emergencyContactAddress} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
       </Row>

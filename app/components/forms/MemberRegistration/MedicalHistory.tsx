@@ -102,8 +102,8 @@ const MedicalHistory = () => {
         <h4 className="mb-4">Medical History</h4>
          <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="medicalAid">
-              <Form.Label>Do you have medical aid?</Form.Label>
+            <Form.Group id="medicalAid" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Do you have medical aid?</Form.Label>
               <div>
                 <Form.Check type="radio" label="Yes" name="medicalAid" id="medicalAid-yes" value="yes" checked={medicalAid === 'yes'} onChange={() => handleRadioChange('medicalAid', 'yes')} inline />
                 <Form.Check type="radio" label="No" name="medicalAid" id="medicalAid-no" value="no" checked={medicalAid === 'no'} onChange={() => handleRadioChange('medicalAid', 'no')} inline />
@@ -113,36 +113,36 @@ const MedicalHistory = () => {
         </Row>
         <Row>
           <Col md={6} className="mb-3">
-            <Form.Group id="medicalPractitionerName">
-              <Form.Label>Name of the Medical Practitioner:</Form.Label>
-              <Form.Control type="text" placeholder="Medical Practitioner Name" name="medicalPractitionerName" value={medicalPractitionerName} onChange={handleInputChange} />
+            <Form.Group id="medicalPractitionerName" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Name of the Medical Practitioner:</Form.Label>
+              <Form.Control type="text" placeholder="Medical Practitioner Name" name="medicalPractitionerName" value={medicalPractitionerName} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
           <Col md={6} className="mb-3">
-            <Form.Group id="medicalAidSchemeName">
-              <Form.Label>Medical Aid Scheme Name:</Form.Label>
-              <Form.Control type="text" placeholder="Medical Aid Scheme Name" name="medicalAidSchemeName" value={medicalAidSchemeName} onChange={handleInputChange} />
+            <Form.Group id="medicalAidSchemeName" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Medical Aid Scheme Name:</Form.Label>
+              <Form.Control type="text" placeholder="Medical Aid Scheme Name" name="medicalAidSchemeName" value={medicalAidSchemeName} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col md={6} className="mb-3">
-            <Form.Group id="medicalAidNumber">
-              <Form.Label>Medical Aid Number:</Form.Label>
-              <Form.Control type="text" placeholder="Medical Aid Number" name="medicalAidNumber" value={medicalAidNumber} onChange={handleInputChange} />
+            <Form.Group id="medicalAidNumber" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Medical Aid Number:</Form.Label>
+              <Form.Control type="text" placeholder="Medical Aid Number" name="medicalAidNumber" value={medicalAidNumber} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
           <Col md={6} className="mb-3">
-            <Form.Group id="principalMember">
-              <Form.Label>Principal Member:</Form.Label>
-              <Form.Control type="text" placeholder="Principal Member" name="principalMember" value={principalMember} onChange={handleInputChange} />
+            <Form.Group id="principalMember" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Principal Member:</Form.Label>
+              <Form.Control type="text" placeholder="Principal Member" name="principalMember" value={principalMember} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="psychologicalDistress">
-              <Form.Label>Is or has the member suffered from or received treatment for any psychological/emotional distress?</Form.Label>
+            <Form.Group id="psychologicalDistress" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Is or has the member suffered from or received treatment for any psychological/emotional distress?</Form.Label>
               <div>
                 <Form.Check type="radio" label="Yes" name="psychologicalDistress" id="psychologicalDistress-yes" value="yes" checked={psychologicalDistress === 'yes'} onChange={() => handleRadioChange('psychologicalDistress', 'yes')} inline />
                 <Form.Check type="radio" label="No" name="psychologicalDistress" id="psychologicalDistress-no" value="no" checked={psychologicalDistress === 'no'} onChange={() => handleRadioChange('psychologicalDistress', 'no')} inline />
@@ -152,48 +152,48 @@ const MedicalHistory = () => {
         </Row>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="medicalConditions">
-              <Form.Label>Do you live with any medical conditions or any allergies we should be aware of? Please indicate:</Form.Label>
-              <Form.Control type="text" placeholder="Medical Conditions/Allergies" name="medicalConditions" value={medicalConditions} onChange={handleInputChange} />
+            <Form.Group id="medicalConditions" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Do you live with any medical conditions or any allergies we should be aware of? Please indicate:</Form.Label>
+              <Form.Control type="text" placeholder="Medical Conditions/Allergies" name="medicalConditions" value={medicalConditions} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="medicationForCondition">
-              <Form.Label>If you answered yes above, are you taking any medication for your medical condition that we should be aware of?</Form.Label>
-              <Form.Control type="text" placeholder="Medication for Condition" name="medicationForCondition" value={medicationForCondition} onChange={handleInputChange} />
+            <Form.Group id="medicationForCondition" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">If you answered yes above, are you taking any medication for your medical condition that we should be aware of?</Form.Label>
+              <Form.Control type="text" placeholder="Medication for Condition" name="medicationForCondition" value={medicationForCondition} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="chronicMedication">
-              <Form.Label>Do you take any chronic medication? If yes, please indicate below:</Form.Label>
-               <Form.Control type="text" placeholder="Chronic Medication" name="chronicMedication" value={chronicMedication} onChange={handleInputChange} />
+            <Form.Group id="chronicMedication" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Do you take any chronic medication? If yes, please indicate below:</Form.Label>
+               <Form.Control type="text" placeholder="Chronic Medication" name="chronicMedication" value={chronicMedication} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="learningDisability">
-              <Form.Label>Do you have a learning disability? If yes, please indicate below:</Form.Label>
-              <Form.Control type="text" placeholder="Learning Disability" name="learningDisability" value={learningDisability} onChange={handleInputChange} />
+            <Form.Group id="learningDisability" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Do you have a learning disability? If yes, please indicate below:</Form.Label>
+              <Form.Control type="text" placeholder="Learning Disability" name="learningDisability" value={learningDisability} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>
          <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="sexualHealthServices">
-              <Form.Label>Have you ever received Sexual & Reproductive Health & Rights services at any healthcare center? If yes, please provide the name of the facility below:</Form.Label>
-              <Form.Control type="text" placeholder="Sexual Health Services Facility" name="sexualHealthServices" value={sexualHealthServices} onChange={handleInputChange} />
+            <Form.Group id="sexualHealthServices" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Have you ever received Sexual & Reproductive Health & Rights services at any healthcare center? If yes, please provide the name of the facility below:</Form.Label>
+              <Form.Control type="text" placeholder="Sexual Health Services Facility" name="sexualHealthServices" value={sexualHealthServices} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="sgbvSurvivor">
-              <Form.Label>Are you a survivor of Sexual Gender-Based Violence (SGBV)?</Form.Label>
+            <Form.Group id="sgbvSurvivor" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Are you a survivor of Sexual Gender-Based Violence (SGBV)?</Form.Label>
               <div>
                 <Form.Check type="radio" label="Yes" name="sgbvSurvivor" id="sgbvSurvivor-yes" value="yes" checked={sgbvSurvivor === 'yes'} onChange={() => handleRadioChange('sgbvSurvivor', 'yes')} inline />
                 <Form.Check type="radio" label="No" name="sgbvSurvivor" id="sgbvSurvivor-no" value="no" checked={sgbvSurvivor === 'no'} onChange={() => handleRadioChange('sgbvSurvivor', 'no')} inline />

@@ -70,8 +70,8 @@ const MemberRegistration = () => {
           </div>
         </div>
       )}
-    <Form method="post" className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
-      <h3 className="text-xl font-bold mb-4">New Member Registration</h3>
+    <Form method="post" className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-2xl mx-auto my-8" onSubmit={handleSubmit}>
+      <h3 className="text-xl font-bold mb-6">New Member Registration</h3>
       {activeCard === 1 && <PersonalInformation />}
       {activeCard === 2 && <ParentGuardianContact />}
       {activeCard === 3 && <EmergencyContact />}

@@ -105,36 +105,36 @@ const ParentGuardianContact = () => {
       <legend>Parent / Guardian Contact Information</legend>
       <Row>
         <Col md={6} className="mb-3">
-          <Form.Group id="parentGuardianTitle">
-            <Form.Label>Title</Form.Label>
-            <Form.Control type="text" placeholder="Title" name="parentGuardianTitle" value={parentGuardianTitle} onChange={handleInputChange} />
+          <Form.Group id="parentGuardianTitle" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Title</Form.Label>
+            <Form.Control type="text" placeholder="Title" name="parentGuardianTitle" value={parentGuardianTitle} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
         <Col md={6} className="mb-3">
-          <Form.Group id="parentGuardianLastName">
-            <Form.Label>Surname</Form.Label>
-            <Form.Control type="text" placeholder="Surname" name="parentGuardianLastName" value={parentGuardianLastName} onChange={handleInputChange} />
-          </Form.Group>
-        </Col>
-      </Row>
-      <Row>
-        <Col md={6} className="mb-3">
-          <Form.Group id="parentGuardianFirstName">
-            <Form.Label>Names</Form.Label>
-            <Form.Control type="text" placeholder="Names" name="parentGuardianFirstName" value={parentGuardianFirstName} onChange={handleInputChange} />
-          </Form.Group>
-        </Col>
-        <Col md={6} className="mb-3">
-          <Form.Group id="parentGuardianDateOfBirth">
-            <Form.Label>Date of Birth</Form.Label>
-            <Form.Control type="date" name="parentGuardianDateOfBirth" value={parentGuardianDateOfBirth} onChange={handleInputChange} />
+          <Form.Group id="parentGuardianLastName" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Surname</Form.Label>
+            <Form.Control type="text" placeholder="Surname" name="parentGuardianLastName" value={parentGuardianLastName} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
       </Row>
       <Row>
         <Col md={6} className="mb-3">
-          <Form.Group id="parentGuardianGender">
-            <Form.Label>Gender</Form.Label>
+          <Form.Group id="parentGuardianFirstName" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Names</Form.Label>
+            <Form.Control type="text" placeholder="Names" name="parentGuardianFirstName" value={parentGuardianFirstName} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+          </Form.Group>
+        </Col>
+        <Col md={6} className="mb-3">
+          <Form.Group id="parentGuardianDateOfBirth" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Date of Birth</Form.Label>
+            <Form.Control type="date" name="parentGuardianDateOfBirth" value={parentGuardianDateOfBirth} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+          </Form.Group>
+        </Col>
+      </Row>
+      <Row>
+        <Col md={6} className="mb-3">
+          <Form.Group id="parentGuardianGender" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Gender</Form.Label>
             <div>
               <Form.Check type="radio" label="Male" name="parentGuardianGender" id="parentGuardianGender-male" value="male" checked={parentGuardianGender === 'male'} onChange={() => handleGenderChange('male')} inline />
               <Form.Check type="radio" label="Female" name="parentGuardianGender" id="parentGuardianGender-female" value="female" checked={parentGuardianGender === 'female'} onChange={() => handleGenderChange('female')} inline />
@@ -142,51 +142,51 @@ const ParentGuardianContact = () => {
           </Form.Group>
         </Col>
         <Col md={6} className="mb-3">
-          <Form.Group id="parentGuardianEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Email Address" name="parentGuardianEmail" value={parentGuardianEmail} onChange={handleInputChange} />
+          <Form.Group id="parentGuardianEmail" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Email</Form.Label>
+            <Form.Control type="email" placeholder="Email Address" name="parentGuardianEmail" value={parentGuardianEmail} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
       </Row>
       <Row>
         <Col md={6} className="mb-3">
-          <Form.Group id="parentGuardianPhone">
-            <Form.Label>Contact Number</Form.Label>
-            <Form.Control type="text" placeholder="Contact Number" name="parentGuardianPhone" value={parentGuardianPhone} onChange={handleInputChange} />
+          <Form.Group id="parentGuardianPhone" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Contact Number</Form.Label>
+            <Form.Control type="text" placeholder="Contact Number" name="parentGuardianPhone" value={parentGuardianPhone} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
         <Col md={6} className="mb-3">
-          <Form.Group id="parentGuardianAddress">
-            <Form.Label>Residential Address</Form.Label>
-            <Form.Control type="text" placeholder="Residential Address" name="parentGuardianAddress" value={parentGuardianAddress} onChange={handleInputChange} />
-          </Form.Group>
-        </Col>
-      </Row>
-      <Row>
-        <Col md={6} className="mb-3">
-          <Form.Group id="parentGuardianCity">
-            <Form.Label>City</Form.Label>
-            <Form.Control type="text" placeholder="Town/City of Residence" name="parentGuardianCity" value={parentGuardianCity} onChange={handleInputChange} />
-          </Form.Group>
-        </Col>
-        <Col md={6} className="mb-3">
-          <Form.Group id="parentGuardianState">
-            <Form.Label>State</Form.Label>
-            <Form.Control type="text" placeholder="State" name="parentGuardianState" value={parentGuardianState} onChange={handleInputChange} />
+          <Form.Group id="parentGuardianAddress" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Residential Address</Form.Label>
+            <Form.Control type="text" placeholder="Residential Address" name="parentGuardianAddress" value={parentGuardianAddress} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
       </Row>
       <Row>
         <Col md={6} className="mb-3">
-          <Form.Group id="parentGuardianZipCode">
-            <Form.Label>Zip Code</Form.Label>
-            <Form.Control type="text" placeholder="Zip Code" name="parentGuardianZipCode" value={parentGuardianZipCode} onChange={handleInputChange} />
+          <Form.Group id="parentGuardianCity" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">City</Form.Label>
+            <Form.Control type="text" placeholder="Town/City of Residence" name="parentGuardianCity" value={parentGuardianCity} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+          </Form.Group>
+        </Col>
+        <Col md={6} className="mb-3">
+          <Form.Group id="parentGuardianState" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">State</Form.Label>
+            <Form.Control type="text" placeholder="State" name="parentGuardianState" value={parentGuardianState} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+          </Form.Group>
+        </Col>
+      </Row>
+      <Row>
+        <Col md={6} className="mb-3">
+          <Form.Group id="parentGuardianZipCode" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Zip Code</Form.Label>
+            <Form.Control type="text" placeholder="Zip Code" name="parentGuardianZipCode" value={parentGuardianZipCode} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
         <Col md={12} className="mb-3">
-          <Form.Group id="parentGuardianSocialGrant">
-            <Form.Label>Does the child, parent and or guardian receive a social grant of any kind? If yes, please specify the name of the grant below:</Form.Label>
-            <Form.Control type="text" placeholder="Social Grant Name" name="parentGuardianSocialGrant" value={parentGuardianSocialGrant} onChange={handleInputChange} />
+          <Form.Group id="parentGuardianSocialGrant" className="mb-4">
+            <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Does the child, parent and or guardian receive a social grant of any kind? If yes, please specify the name of the grant below:</Form.Label>
+            <Form.Control type="text" placeholder="Social Grant Name" name="parentGuardianSocialGrant" value={parentGuardianSocialGrant} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
           </Form.Group>
         </Col>
       </Row>

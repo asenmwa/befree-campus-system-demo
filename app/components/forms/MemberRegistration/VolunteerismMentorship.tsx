@@ -105,16 +105,16 @@ const VolunteerismMentorship = () => {
         <h4 className="mb-4">Volunteerism / Mentorship</h4>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="volunteerActivities">
-              <Form.Label>We encourage the active participation of the parent(s)/guardian(s) of our members. With prior arrangements, parents are welcome to sit in on the Life Skills classes. Should you be interested in volunteering at the #BeFree Youth Campus, kindly indicate which activity you would like to volunteer for?</Form.Label>
-              <Form.Control type="text" placeholder="Volunteer Activities" name="volunteerActivities" value={volunteerActivities} onChange={handleInputChange} />
+            <Form.Group id="volunteerActivities" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">We encourage the active participation of the parent(s)/guardian(s) of our members. With prior arrangements, parents are welcome to sit in on the Life Skills classes. Should you be interested in volunteering at the #BeFree Youth Campus, kindly indicate which activity you would like to volunteer for?</Form.Label>
+              <Form.Control type="text" placeholder="Volunteer Activities" name="volunteerActivities" value={volunteerActivities} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="heardAboutUs">
-              <Form.Label>Where did you hear about the #BeFree Youth Campus?</Form.Label>
+            <Form.Group id="heardAboutUs" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Where did you hear about the #BeFree Youth Campus?</Form.Label>
               <div>
                 <Form.Check type="checkbox" label="Social Media (Instagram, Twitter, Facebook, TikTok etc.)" id="heardAboutUs-socialMedia" checked={heardAboutUs.socialMedia} onChange={handleHeardAboutUsChange} />
                 <Form.Check type="checkbox" label="Newspaper" id="heardAboutUs-newspaper" checked={heardAboutUs.newspaper} onChange={handleHeardAboutUsChange} />
@@ -128,16 +128,16 @@ const VolunteerismMentorship = () => {
         </Row>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="whyJoin">
-              <Form.Label>Why would you like to join the #BeFree Youth Campus? Motivate your answer in detail, using the full five lines provided.</Form.Label>
-              <Form.Control as="textarea" rows={5} placeholder="Why Join?" name="whyJoin" value={whyJoin} onChange={handleInputChange} />
+            <Form.Group id="whyJoin" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Why would you like to join the #BeFree Youth Campus? Motivate your answer in detail, using the full five lines provided.</Form.Label>
+              <Form.Control as="textarea" rows={5} placeholder="Why Join?" name="whyJoin" value={whyJoin} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="technologyAccess">
-              <Form.Label>What kind of technology do you have access to? (You can select more than one)</Form.Label>
+            <Form.Group id="technologyAccess" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">What kind of technology do you have access to? (You can select more than one)</Form.Label>
               <div>
                 <Form.Check type="checkbox" label="Non-Smartphone" id="technologyAccess-nonSmartphone" checked={technologyAccess.nonSmartphone} onChange={handleTechnologyAccessChange} />
                 <Form.Check type="checkbox" label="Smartphone" id="technologyAccess-smartphone" checked={technologyAccess.smartphone} onChange={handleTechnologyAccessChange} />
@@ -149,9 +149,9 @@ const VolunteerismMentorship = () => {
         </Row>
         <Row>
           <Col md={12} className="mb-3">
-            <Form.Group id="youthOrganization">
-              <Form.Label>Do you belong to a youth organization? If yes, please provide the name and state the year in which you become a member.</Form.Label>
-              <Form.Control type="text" placeholder="Youth Organization" name="youthOrganization" value={youthOrganization} onChange={handleInputChange} />
+            <Form.Group id="youthOrganization" className="mb-4">
+              <Form.Label className="block text-gray-700 text-sm font-bold mb-2">Do you belong to a youth organization? If yes, please provide the name and state the year in which you become a member.</Form.Label>
+              <Form.Control type="text" placeholder="Youth Organization" name="youthOrganization" value={youthOrganization} onChange={handleInputChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </Form.Group>
           </Col>
         </Row>
