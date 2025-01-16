@@ -7,12 +7,24 @@ import RapeCaseForm from '~/components/forms/Clinical/RapeCaseForm';
 import HIVTestingCaseForm from '~/components/forms/Clinical/HIVTestingCaseForm';
 import GBVCaseForm from '~/components/forms/Clinical/GBVCaseForm';
 import VisitHistoryChart from '~/components/Clinical/VisitHistoryChart';
+import GeneralIntakeFormModal from '~/components/forms/Clinical/GeneralIntakeFormModal';
+import PrepModal from '~/components/forms/Clinical/PrepModal';
+import PepModal from '~/components/forms/Clinical/PepModal';
+import ReproductiveHealthModal from '~/components/forms/Clinical/ReproductiveHealthModal';
+import DrugMisuseModal from '~/components/forms/Clinical/DrugMisuseModal';
+import PsychologyIntakeModal from '~/components/forms/Clinical/PsychologyIntakeModal';
 import { useNavigate } from '@remix-run/react';
 
 const ClinicalRoute = () => {
   const [isRapeModalOpen, setIsRapeModalOpen] = useState(false);
   const [isHIVModalOpen, setIsHIVModalOpen] = useState(false);
   const [isGBVModalOpen, setIsGBVModalOpen] = useState(false);
+  const [isGeneralIntakeModalOpen, setIsGeneralIntakeModalOpen] = useState(false);
+  const [isPrepModalOpen, setIsPrepModalOpen] = useState(false);
+  const [isPepModalOpen, setIsPepModalOpen] = useState(false);
+  const [isReproductiveHealthModalOpen, setIsReproductiveHealthModalOpen] = useState(false);
+  const [isDrugMisuseModalOpen, setIsDrugMisuseModalOpen] = useState(false);
+  const [isPsychologyIntakeModalOpen, setIsPsychologyIntakeModalOpen] = useState(false);
   const [patientDetails, setPatientDetails] = useState<{ firstName: string; dateOfBirth: string; gender: string; rfid: string } | null>(null);
   const [isRfidModalOpen, setIsRfidModalOpen] = useState(false);
   const [rfidError, setRfidError] = useState(false);
@@ -93,15 +105,15 @@ const ClinicalRoute = () => {
         </div>
 
         <div className="flex space-x-4 mb-4">
-          <button className="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded cursor-not-allowed">General Intake Form</button>
+          <button onClick={() => setIsGeneralIntakeModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">General Intake Form</button>
           <button onClick={() => setIsRapeModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Suspected Rape</button>
           <button onClick={() => setIsHIVModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">HIV Testing</button>
-          <button className="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded cursor-not-allowed">PrEP</button>
-          <button className="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded cursor-not-allowed">PEP</button>
+          <button onClick={() => setIsPrepModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">PrEP</button>
+          <button onClick={() => setIsPepModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">PEP</button>
           <button onClick={() => setIsGBVModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">GBV Case</button>
-          <button className="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded cursor-not-allowed">Reproductive Health</button>
-          <button className="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded cursor-not-allowed">Drug Misuse</button>
-          <button className="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded cursor-not-allowed">Psychology Intake Form</button>
+          <button onClick={() => setIsReproductiveHealthModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Reproductive Health</button>
+          <button onClick={() => setIsDrugMisuseModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Drug Misuse</button>
+          <button onClick={() => setIsPsychologyIntakeModalOpen(true)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Psychology Intake Form</button>
         </div>
 
         {isRapeModalOpen && (
@@ -114,6 +126,24 @@ const ClinicalRoute = () => {
 
         {isGBVModalOpen && (
           <GBVCaseForm isOpen={isGBVModalOpen} onClose={() => setIsGBVModalOpen(false)} rfid={patientDetails?.rfid || null} patientData={{ name: patientDetails?.firstName ?? '', dob: patientDetails?.dateOfBirth ?? '', gender: patientDetails?.gender ?? '' }} />
+        )}
+        {isGeneralIntakeModalOpen && (
+          <GeneralIntakeFormModal isOpen={isGeneralIntakeModalOpen} onClose={() => setIsGeneralIntakeModalOpen(false)} rfid={patientDetails?.rfid || null} patientData={{ name: patientDetails?.firstName ?? '', dob: patientDetails?.dateOfBirth ?? '', gender: patientDetails?.gender ?? '' }} />
+        )}
+        {isPrepModalOpen && (
+          <PrepModal isOpen={isPrepModalOpen} onClose={() => setIsPrepModalOpen(false)} rfid={patientDetails?.rfid || null} patientData={{ name: patientDetails?.firstName ?? '', dob: patientDetails?.dateOfBirth ?? '', gender: patientDetails?.gender ?? '' }} />
+        )}
+        {isPepModalOpen && (
+          <PepModal isOpen={isPepModalOpen} onClose={() => setIsPepModalOpen(false)} rfid={patientDetails?.rfid || null} patientData={{ name: patientDetails?.firstName ?? '', dob: patientDetails?.dateOfBirth ?? '', gender: patientDetails?.gender ?? '' }} />
+        )}
+        {isReproductiveHealthModalOpen && (
+          <ReproductiveHealthModal isOpen={isReproductiveHealthModalOpen} onClose={() => setIsReproductiveHealthModalOpen(false)} rfid={patientDetails?.rfid || null} patientData={{ name: patientDetails?.firstName ?? '', dob: patientDetails?.dateOfBirth ?? '', gender: patientDetails?.gender ?? '' }} />
+        )}
+        {isDrugMisuseModalOpen && (
+          <DrugMisuseModal isOpen={isDrugMisuseModalOpen} onClose={() => setIsDrugMisuseModalOpen(false)} rfid={patientDetails?.rfid || null} patientData={{ name: patientDetails?.firstName ?? '', dob: patientDetails?.dateOfBirth ?? '', gender: patientDetails?.gender ?? '' }} />
+        )}
+        {isPsychologyIntakeModalOpen && (
+          <PsychologyIntakeModal isOpen={isPsychologyIntakeModalOpen} onClose={() => setIsPsychologyIntakeModalOpen(false)} rfid={patientDetails?.rfid || null} patientData={{ name: patientDetails?.firstName ?? '', dob: patientDetails?.dateOfBirth ?? '', gender: patientDetails?.gender ?? '' }} />
         )}
       </main>
     </div>
